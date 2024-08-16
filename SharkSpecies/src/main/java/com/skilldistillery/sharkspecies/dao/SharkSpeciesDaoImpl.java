@@ -25,8 +25,10 @@ public class SharkSpeciesDaoImpl implements SharkSpeciesDAO {
 
 	@Override
 	public List<SharkSpecies> findAll() {
+		String jpql = "SELECT s FROM SharkSpecies s";
+		return em.createQuery(jpql, SharkSpecies.class).getResultList();
 		// TODO Auto-generated method stub
-		return null;
+	
 	}
 
 	@Override
