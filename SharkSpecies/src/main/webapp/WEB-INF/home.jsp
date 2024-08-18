@@ -42,5 +42,14 @@ ${sharkSpecies }
 	<input type = "submit" value = "Submit"/><br/>
 </form>
 
+<h1>Delete Shark Species by ID</h1>
+<form Action = "delete.do" method=GET>
+Shark ID:
+	<input type = "text" name = "Id"><br/>
+	<input type = "submit" value = "Submit"/><br/>
+	
+</form>
+
+
 </body>
 </html>

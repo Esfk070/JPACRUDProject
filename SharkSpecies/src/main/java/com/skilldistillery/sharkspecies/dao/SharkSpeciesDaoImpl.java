@@ -83,8 +83,21 @@ public class SharkSpeciesDaoImpl implements SharkSpeciesDAO {
 
 	@Override
 	public boolean deleteById(int sharkId) {
-		// TODO Auto-generated method stub
-		return false;
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!deleteById called form DaoImp!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println();
+		System.out.println();
+		boolean deleted = false;
+		SharkSpecies s = em.find(SharkSpecies.class, sharkId);
+		if(s != null) {
+			em.remove(s);
+			deleted=true;
+			
+		}
+		
+		return deleted;
 	}
 
 }

@@ -83,4 +83,37 @@ public class SharkSpeciesController {
 	
 }	
 	
+	@RequestMapping(path = "delete.do", method = RequestMethod.GET)
+	public ModelAndView deleteSharkSpecies(
+			@RequestParam("Id") int Id) {
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!deleteSharkSpecies called form CONTROLLER!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println();
+		System.out.println();
+		ModelAndView mv = new ModelAndView();
+		
+		boolean deleted = sharkDao.deleteById(Id);
+		
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!deleteSharkSpecies called form CONTROLLER 2!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println(deleted);
+		if(deleted) {
+			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!deleteSharkSpecies called form CONTROLLER 3!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			mv.addObject("message", ""
+					+ "Shark Species has been deleted");
+			mv.setViewName("delete");
+		}
+		else
+		{
+			mv.addObject("message", "Failed to delete shark species");
+			mv.setViewName("error");
+		}
+	
+		
+		return mv;
+		
+	}
+	
 }
