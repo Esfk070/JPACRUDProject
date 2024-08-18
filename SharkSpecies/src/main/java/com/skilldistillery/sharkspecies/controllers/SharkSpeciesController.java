@@ -29,6 +29,16 @@ public class SharkSpeciesController {
 		return "home";
 		
 	}
+	@RequestMapping(path = "getShark.do", method = RequestMethod.GET)
+	public ModelAndView findSharkById(@RequestParam("Id") int Id) {
+		ModelAndView mv = new ModelAndView();
+		SharkSpecies sharkSpecies = sharkDao.findById(Id);
+
+		mv.addObject("sharkSpecies", sharkSpecies);
+		mv.setViewName("showShark");
+		
+		return mv;
+	}
 	
 	@RequestMapping(path = "create.do", method = RequestMethod.GET)
 	public ModelAndView createSharkSpecies(

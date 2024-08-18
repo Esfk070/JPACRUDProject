@@ -9,8 +9,15 @@
 <title>Shark Species Home Page</title>
 </head>
 <body>
-<h1>Sharks!!</h1>
-${sharkSpecies }
+
+<h1>Look Up Shark by ID</h1>
+<form action = "getShark.do" method=GET>
+Shark ID:
+	<input type = "text" name = "Id"><br/>
+	<input type = "submit" value = "Submit"/><br/>
+	
+</form>
+
 <h1>Add A New Shark Species</h1>
 	<form action="create.do" method = GET>
 	Species Name:
@@ -43,12 +50,19 @@ ${sharkSpecies }
 </form>
 
 <h1>Delete Shark Species by ID</h1>
-<form Action = "delete.do" method=GET>
+<form action = "delete.do" method=GET>
 Shark ID:
 	<input type = "text" name = "Id"><br/>
 	<input type = "submit" value = "Submit"/><br/>
 	
 </form>
+<h1>Species List</h1>
+<c:forEach var = "shark" items="${sharkSpecies }">
+<p>
+ <a href = "getShark.do?Id=${shark.id}">${ shark.name }</a>
+ </p>
+
+</c:forEach> 
 
 
 </body>
