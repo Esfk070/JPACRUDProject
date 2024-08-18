@@ -10,7 +10,7 @@ public interface SharkSpeciesDAO {
 	List<SharkSpecies> findAll();
 	SharkSpecies create (SharkSpecies shark);
 	SharkSpecies update(int sharkId, SharkSpecies shark);
-	boolean deleteById(int sharkId);
+	boolean deleteById(int sharkId);	//Return true if deleted
 	
 
 }

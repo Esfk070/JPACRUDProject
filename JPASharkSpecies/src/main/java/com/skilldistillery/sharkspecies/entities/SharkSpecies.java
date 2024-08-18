@@ -28,6 +28,14 @@ public class SharkSpecies {
 		this.maxLength = maxLength;
 	}
 
+	public Integer getMaxLength() {
+		return maxLength;
+	}
+
+	public Integer getMaxWeight() {
+		return maxWeight;
+	}
+
 	public void setMaxWeight(Integer maxWeight) {
 		this.maxWeight = maxWeight;
 	}
