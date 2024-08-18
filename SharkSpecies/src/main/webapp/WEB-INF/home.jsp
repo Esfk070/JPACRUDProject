@@ -4,11 +4,15 @@
   
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Shark Species Home Page</title>
+<link rel="stylesheet" type="text/css" href="myStyles.css">
 </head>
-<body>
+
+
+<body style="background-color: lightblue;">
 
 <h1>Look Up Shark by ID</h1>
 <form action = "getShark.do" method=GET>
@@ -63,6 +67,10 @@ Shark ID:
  </p>
 
 </c:forEach> 
+
+      <p style="font-family: cursive; text-decoration: underline;"> Lorem ipsum dolor sit amet, ... </p>
+      <p> Ipsum dolor sit amet consectetur adipiscing. </p>
+
 
 
 </body>
