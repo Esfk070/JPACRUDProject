@@ -33,10 +33,15 @@ public class SharkSpeciesController {
 	public ModelAndView findSharkById(@RequestParam("Id") int Id) {
 		ModelAndView mv = new ModelAndView();
 		SharkSpecies sharkSpecies = sharkDao.findById(Id);
+		if (sharkSpecies == null) {
+			mv.addObject("error", "Invalid ID");
+			mv.setViewName("error");
+		}
+		else {
 
 		mv.addObject("sharkSpecies", sharkSpecies);
 		mv.setViewName("showShark");
-		
+		}
 		return mv;
 	}
 	
